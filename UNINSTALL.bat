@@ -29,7 +29,7 @@ if %ERRORLEVEL%==1060 (
 SC query %SERVICE_ID% | FIND /i "RUNNING" > NUL
 if %ERRORLEVEL%==0 (
 	echo The service will be stopped...
-	%PR_INSTALL% stop %SERVICE_ID%^
+	"%PR_INSTALL%" stop %SERVICE_ID%^
  --LogPath="%PR_LOGPATH%"^
  --LogPrefix="%PR_LOGPREFIX%"^
  --LogLevel="%PR_LOGLEVEL%"^
@@ -48,7 +48,7 @@ if %ERRORLEVEL%==0 (
 )
 
 echo The service will be removed...
-%PR_INSTALL% delete %SERVICE_ID%^
+"%PR_INSTALL%" delete %SERVICE_ID%^
  --LogPath="%PR_LOGPATH%"^
  --LogPrefix="%PR_LOGPREFIX%"^
  --LogLevel="%PR_LOGLEVEL%"^
