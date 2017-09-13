@@ -36,7 +36,7 @@ IF NOT %ERRORLEVEL%==1060 (
 	SC query %SERVICE_ID% | FIND /i "RUNNING" > NUL
 	if !ERRORLEVEL!==0 (
 		echo The service will be stopped...
-		%PR_INSTALL% stop %SERVICE_ID%^
+		"%PR_INSTALL%" stop %SERVICE_ID%^
  --LogPath="%PR_LOGPATH%"^
  --LogPrefix="%PR_LOGPREFIX%"^
  --LogLevel="%PR_LOGLEVEL%"^
@@ -55,7 +55,7 @@ IF NOT %ERRORLEVEL%==1060 (
 	)
  
 	echo The service will be removed...
-	%PR_INSTALL% delete %SERVICE_ID%^
+	"%PR_INSTALL%" delete %SERVICE_ID%^
  --LogPath="%PR_LOGPATH%"^
  --LogPrefix="%PR_LOGPREFIX%"^
  --LogLevel="%PR_LOGLEVEL%"^
@@ -95,7 +95,7 @@ set PR_STOPIMAGE=%SOLR_HOME%bin\solr.cmd
 set PR_STOPPARAMS=stop;-p=%SOLR_PORT%
 
 @REM start
-%PR_INSTALL% //IS/%SERVICE_ID%^
+"%PR_INSTALL%" //IS/%SERVICE_ID%^
  --Description="%SERVICE_DESCRIPTION%"^
  --DisplayName="%SERVICE_NAME%"^
  --Install="%PR_INSTALL%"^
@@ -123,7 +123,7 @@ if %errorlevel%==0 (
 	echo[
 	echo The service "%SERVICE_ID%" will be started...
 	
-	%PR_INSTALL% start %SERVICE_ID%^
+	"%PR_INSTALL%" start %SERVICE_ID%^
  --LogPath="%PR_LOGPATH%"^
  --LogPrefix="%PR_LOGPREFIX%"^
  --LogLevel="%PR_LOGLEVEL%"^
